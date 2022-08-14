@@ -9,6 +9,7 @@ fn main() {
     println!(declarative_macro!());
     println!(declarative_macro!(0, 1));
     println!(declarative_macro!([0, 1]));
+    println!(declarative_macro![0, 1]);
 
     // Second: proc macros
 

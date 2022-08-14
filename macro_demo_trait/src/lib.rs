@@ -12,12 +12,13 @@ macro_rules! declarative_macro {
     // at least one: +
     // zero or any: ?
 
-    // example: [1, 2]
+    // example: declarative!([1, 2])
+    // example: declarative![1, 2]
     ($($elem:expr)+) => {
         "==> declarative macro: $($elem:expr)+"
     };
 
-    // example: (1, 2)
+    // example: declarative!(1, 2)
     ($($elem:expr), +) => {
         "==> declarative macro: $($elem:expr), +)"
     };
