@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/algorithm/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/libp2p_demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/macro_demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/macro_demo_trait/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rocket_demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tokio-demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/http-demo/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
+      <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/macro_demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/macro_demo_trait/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rocket_demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/tokio-demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/http-demo/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
