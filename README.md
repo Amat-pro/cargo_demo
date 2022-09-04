@@ -12,3 +12,4 @@ language of rust
 * rocket_demo (rocket)
 * tokio-demo (tokio)
 * http-demo (hyper)
+* influxd-client-rs

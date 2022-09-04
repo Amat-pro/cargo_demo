@@ -11,6 +11,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tokio-demo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/http-demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/influxd-client-rs/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
       <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
@@ -19,6 +20,7 @@
       <excludeFolder url="file://$MODULE_DIR$/rocket_demo/target" />
       <excludeFolder url="file://$MODULE_DIR$/tokio-demo/target" />
       <excludeFolder url="file://$MODULE_DIR$/http-demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/influxd-client-rs/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
