@@ -10,6 +10,7 @@ pub fn new_default_http_client() -> Client<HttpConnector, Body> {
     return client;
 }
 
+// todo: sender
 pub fn new_sender_with_block(config: Config) -> Result<SendRequest<Body>, Box<dyn std::error::Error>> {
     let addr = format!("{}:{}", config.server.ip, config.server.port);
     let rt = Runtime::new().unwrap();
@@ -27,7 +28,7 @@ pub fn new_sender_with_block(config: Config) -> Result<SendRequest<Body>, Box<dy
                     //         println!("Connection failed: {:?}", err);
                     //     }
                     // });
-                    rt.block_on(conn);
+                    rt.block_on(conn).expect("TODO: panic message");
                     Ok(sender)
                 }
             }

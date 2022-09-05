@@ -7,13 +7,13 @@ pub fn build_http_get_request_with_basic(path: String, config: config::Config) -
         path2 = format!("{}{}", "/", path)
     }
     let url = format!("http://{}:{}{}", config.server.ip, config.server.port, path2);
-    // let url = path2;
 
     let basic_token = format!("{} {}", "Basic", config.basic_authentication.base64());
     let request = Request::builder()
         .method(Method::GET)
         .uri(url)
         .header(hyper::header::AUTHORIZATION, basic_token)
+        .header("Host", "example.com")
         .body(Body::empty())
         .unwrap();
 
