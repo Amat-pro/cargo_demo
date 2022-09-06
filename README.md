@@ -2,6 +2,10 @@
 
 language of rust
 
+## Docs
+* https://docs.rs/
+* https://doc.rust-lang.org/stable/std/
+
 ## Document
 
 * src
