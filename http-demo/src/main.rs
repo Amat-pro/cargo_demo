@@ -1,11 +1,6 @@
 // @link: https://hyper.rs/guides/client/basic/
 // http demo
 
-// const INFLUX_DB_ADDR: &str = "192.168.9.111";
-// const INFLUX_DB_PORT: i16 = 8086;
-//
-// const INFLUX_DB_HTTP_PATH_CONFIG: &str = "/api/v2/config";
-
 use hyper::body::Buf;
 use serde_derive::Deserialize;
 use std::fmt::{Display, Formatter};
@@ -55,11 +50,12 @@ fn main() {
 //     panic!("test panic")
 // }
 
+// ----------------------------------------High-Level-----------------------------------------------
 // ===========================================First=================================================
 async fn do_get_use_client() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let client = hyper::Client::new();
 
-    let url = "http://192.168.9.111:8086/api/v2/config";
+    let url = "http://47.102.103.0:8086/api/v2/config";
     let res = client.get(hyper::Uri::from_static(url)).await?;
 
     if !res.status().is_success() {
@@ -94,8 +90,9 @@ impl Display for ConfigInfo {
     }
 }
 
-
+// -----------------------------------------Low-Level-----------------------------------------------
 // ===========================================Second================================================
+use tower::ServiceExt;
 use http::{Request, StatusCode};
 use hyper::{client::conn, Body};
 use tokio::net::TcpStream;
@@ -123,8 +120,7 @@ async fn do_get_use_sender() -> Result<(), Box<dyn std::error::Error>> {
 
     // To send via the same connection again, it may not work as it may not be ready,
     // so we have to wait until the request_sender becomes ready.
-    // todo: ready ?
-    // request_sender.ready().await;
+    request_sender.ready().await?;
 
     let request = Request::builder()
         .header("Host", "example.com")
