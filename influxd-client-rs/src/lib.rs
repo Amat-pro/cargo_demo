@@ -8,12 +8,11 @@ mod request_builder;
 #[cfg(test)]
 mod test {
     use tokio::runtime::Runtime;
-    use crate::api::list_all_authorizations;
-    use crate::client::{new_default_http_client, new_sender_with_block};
+    use crate::client::{new_default_http_client};
     use crate::config::{BasicAuthentication, Config, Server};
     use crate::request_builder::build_http_get_request_with_basic;
 
-    // todo: remove
+    // todo: sender
     // #[test]
     // fn test_list_all_authorizations() {
     //     let basic =
