@@ -8,11 +8,8 @@ use hyper::client::conn::SendRequest;
 use serde_derive::Deserialize;
 use hyper::body::Buf;
 
-const PATH_PREFIX: &str = "/api/v2/";
-
 pub async fn list_all_authorizations(sender: &mut SendRequest<Body>, config: Config)
                                      -> Result<AuthorizationsRes, Box<dyn std::error::Error>> {
-    // let path = format!("{}{}", PATH_PREFIX, "authorizations");
     let path = "".to_string();
     let request = build_http_get_request_with_basic(path, config);
     let future = sender.send_request(request);
