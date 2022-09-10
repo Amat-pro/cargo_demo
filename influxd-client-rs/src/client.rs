@@ -26,17 +26,14 @@ pub async fn new_sender_async(ip: String, port: String) -> Result<SendRequest<Bo
                     Err(Box::new(err))
                 }
                 Ok((request_sender, connection)) => {
-                    let connection_result = connection.await;
-                    match connection_result {
-                        Err(err) => {
-                            println!("connection_result err: {:?}", err);
-                            Err(Box::new(err))
+                    // spawn a task to poll the connection and drive the HTTP state
+                    tokio::spawn(async move {
+                        if let Err(e) = connection.await {
+                            println!("Error in connection: {}", e);
                         }
-                        Ok(_) => {
-                            println!("connection_result success");
-                            Ok(request_sender)
-                        }
-                    }
+                    });
+
+                    Ok(request_sender)
                 }
             }
         }

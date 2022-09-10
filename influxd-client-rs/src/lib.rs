@@ -13,7 +13,6 @@ mod test {
     use crate::config::{BasicAuthentication, Config, Server};
     use crate::request_builder::build_http_get_request_with_basic;
 
-    // todo: sender
     #[test]
     fn test_list_all_authorizations() {
         let basic =
@@ -27,7 +26,6 @@ mod test {
             new_sender_async(config.server.ip.clone(), config.server.port.clone()));
         match sender_result {
             Ok(mut sender) => {
-                let s = &mut sender;
 
                 let request_result = Request::builder()
                     // We need to manually add the host header because SendRequest does not
@@ -41,7 +39,7 @@ mod test {
                         ()
                     }
                     Ok(request) => {
-                        let response_result = rt.block_on(s.send_request(request));
+                        let response_result = rt.block_on(sender.send_request(request));
                         match response_result {
                             Err(err) => {
                                 println!("response_result err: {:?}", err);
