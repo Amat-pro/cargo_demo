@@ -26,7 +26,6 @@ mod test {
             new_sender_async(config.server.ip.clone(), config.server.port.clone()));
         match sender_result {
             Ok(mut sender) => {
-
                 let request_result = Request::builder()
                     // We need to manually add the host header because SendRequest does not
                     .header("Host", "example.com")
@@ -69,7 +68,8 @@ mod test {
         let config = Config::from(basic, server);
 
         let http_client = new_default_http_client();
-        let request = build_http_get_request_with_basic("/api/v2/authrizations".to_string(), config.clone());
+        let request = build_http_get_request_with_basic(
+            "/api/v2".to_string(), config.clone());
 
         // block for result
         let rt = Runtime::new().unwrap();

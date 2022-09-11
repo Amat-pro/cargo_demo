@@ -10,7 +10,7 @@ use hyper::body::Buf;
 
 pub async fn list_all_authorizations(sender: &mut SendRequest<Body>, config: Config)
                                      -> Result<AuthorizationsRes, Box<dyn std::error::Error>> {
-    let path = "".to_string();
+    let path = "/api/v2".to_string();
     let request = build_http_get_request_with_basic(path, config);
     let future = sender.send_request(request);
     let result = future.await;
