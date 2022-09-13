@@ -3,6 +3,7 @@ extern crate core;
 pub mod api;
 pub mod config;
 pub mod client;
+pub mod client_v2;
 mod request_builder;
 
 #[cfg(test)]
