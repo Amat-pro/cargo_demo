@@ -3,6 +3,7 @@
 language of rust
 
 ## Docs
+* [Rust Course](https://course.rs/about-book.html)
 * https://docs.rs/
 * https://doc.rust-lang.org/stable/std/
 

@@ -68,7 +68,6 @@ async fn do_get_use_client() -> Result<(), Box<dyn std::error::Error + Send + Sy
     let body = hyper::body::aggregate(res).await?;
     let config_info: ConfigInfo = serde_json::from_reader(body.reader())?;
 
-    // todo:
     // OUTPUT:
     println!("OUTPUT: {}", config_info.clone());
 
