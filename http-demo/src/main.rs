@@ -100,7 +100,8 @@ use tokio::net::TcpStream;
 async fn do_get_use_sender() -> Result<(), Box<dyn std::error::Error>> {
     let tcp_stream = TcpStream::connect("example.com:80").await?;
 
-    let (mut request_sender, connection) = conn::handshake(tcp_stream).await?;
+    let (mut request_sender, connection) =
+        conn::handshake(tcp_stream).await?;
 
     // spawn a task to poll the connection and drive the HTTP state
     tokio::spawn(async move {

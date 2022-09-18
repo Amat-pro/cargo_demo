@@ -1,3 +1,6 @@
-pub mod sorting;
+mod sorting;
+mod dp;
 
 pub use sorting::bubble_sort::bubble_sort;
+
+pub use dp::triangle_yanghui::generate_triangle_yanghui;
