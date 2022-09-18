@@ -26,7 +26,7 @@
 走到dp\[n-1,0]的最小和是第1列相加
 
 结果：dp\[n-1,m-1]
- 
+
  **/
 
 pub fn min_path_sum(mut grid: Vec<Vec<i64>>) -> i64 {
@@ -35,30 +35,31 @@ pub fn min_path_sum(mut grid: Vec<Vec<i64>>) -> i64 {
     for col in 1..col_len {
         grid[0][col] += grid[0][col - 1];
     }
-    
+
     // sum of path dp[n-1, 0]
     let row_len = grid.len();
     for row in 1..row_len {
         grid[row][0] += grid[row - 1][0];
     }
-    
+
     // calculate min_sum of
     for n in 1..row_len {
         for m in 1..col_len {
             grid[n][m] += grid[n][m - 1].min(grid[n - 1][m])
-        } }
-    
+        }
+    }
+
     grid[row_len - 1][col_len - 1]
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_min_path_sum() {
-        let grid = vec![vec![1,3,1], vec![1,5,1], vec![4,2,1]];
-        assert_eq!(7, min_path_sum(grid));
+        let grid = vec![vec![1, 3, 1], vec![1, 5, 1], vec![4, 2, 1]];
+        assert_eq!(7, min_path_sum(grid))
     }
 }
 

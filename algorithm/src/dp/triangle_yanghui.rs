@@ -39,13 +39,13 @@ mod test {
     fn test_generate_triangle_yanghui() {
         assert_eq!(vec![vec![1]], generate_triangle_yanghui(1));
         assert_eq!(vec![vec![1],
-                        vec![1, 1]],
-                   generate_triangle_yanghui(2));
+            vec![1, 1]],
+            generate_triangle_yanghui(2));
         assert_eq!(vec![vec![1],
-                        vec![1, 1],
-                        vec![1, 2, 1],
-                        vec![1, 3, 3, 1],
-                        vec![1, 4, 6, 4, 1]],
-                   generate_triangle_yanghui(5));
+            vec![1, 1],
+            vec![1, 2, 1],
+            vec![1, 3, 3, 1],
+            vec![1, 4, 6, 4, 1]],
+            generate_triangle_yanghui(5));
     }
 }
