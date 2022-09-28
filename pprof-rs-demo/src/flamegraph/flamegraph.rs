@@ -1,4 +1,5 @@
 use std::fs::File;
+use std::{time, thread};
 
 pub fn do_something() {
     let prime_numbers = prepare_prime_numbers();
@@ -25,8 +26,21 @@ pub fn do_something() {
         println!("Prime numbers: {}", v);
     }
 
+    //
+    println!("===> report first");
     if let Ok(report) = guard.report().build() {
         let file = File::create("flamegraph.svg").unwrap();
+        report.flamegraph(file).unwrap();
+
+        println!("report: {:?}", report);
+    }
+
+    // sleep twenty seconds and report again
+    let twenty_secs = time::Duration::from_secs(20);
+    thread::sleep(twenty_secs);
+    println!("===> report second");
+    if let Ok(report) = guard.report().build() {
+        let file = File::create("flamegraph-second.svg").unwrap();
         report.flamegraph(file).unwrap();
 
         println!("report: {:?}", report);
