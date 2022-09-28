@@ -1,5 +1,7 @@
 use std::fs::File;
 use std::{time, thread};
+use std::io::Write;
+use pprof::protos::Message;
 
 pub fn do_something() {
     let prime_numbers = prepare_prime_numbers();
@@ -29,13 +31,13 @@ pub fn do_something() {
     //
     println!("===> report first");
     if let Ok(report) = guard.report().build() {
-        let file = File::create("flamegraph.svg").unwrap();
-        // report.flamegraph(file).unwrap();
+        let mut file = File::create("profile.pb").unwrap();
+        let profile = report.pprof().unwrap();
 
-        // write file with options
-        let mut options = pprof::flamegraph::Options::default();
-        options.image_width = Some(2500);
-        report.flamegraph_with_options(file, &mut options).unwrap();
+        let mut content = Vec::new();
+
+        profile.write_to_vec(&mut content).unwrap();
+        file.write_all(&content).unwrap();
 
         println!("report: {:?}", report);
     }
@@ -45,13 +47,13 @@ pub fn do_something() {
     thread::sleep(twenty_secs);
     println!("===> report second");
     if let Ok(report) = guard.report().build() {
-        let file = File::create("flamegraph-second.svg").unwrap();
-        // report.flamegraph(file).unwrap();
+        let mut file = File::create("profile-second.pb").unwrap();
+        let profile = report.pprof().unwrap();
 
-        // write file with options
-        let mut options = pprof::flamegraph::Options::default();
-        options.image_width = Some(2500);
-        report.flamegraph_with_options(file, &mut options).unwrap();
+        let mut content = Vec::new();
+
+        profile.write_to_vec(&mut content).unwrap();
+        file.write_all(&content).unwrap();
 
         println!("report: {:?}", report);
     }
@@ -126,4 +128,3 @@ fn is_prime_number3(v: usize, prime_numbers: &[usize]) -> bool {
 
     true
 }
-

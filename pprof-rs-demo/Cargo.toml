@@ -7,5 +7,4 @@ edition = "2021"
 
 [dependencies]
 # pprof = "0.10.1"
-pprof = { version = "0.10", features = ["flamegraph"] }
-
+pprof = { version = "0.10", features = ["flamegraph", "protobuf-codec"] }
