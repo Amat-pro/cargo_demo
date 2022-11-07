@@ -14,6 +14,10 @@
       <sourceFolder url="file://$MODULE_DIR$/influxd-client-rs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bevy-demo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/thread-local-demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/api/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/index/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linkerd2/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
       <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
@@ -25,6 +29,10 @@
       <excludeFolder url="file://$MODULE_DIR$/influxd-client-rs/target" />
       <excludeFolder url="file://$MODULE_DIR$/bevy-demo/target" />
       <excludeFolder url="file://$MODULE_DIR$/thread-local-demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linkerd2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/api/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/index/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
