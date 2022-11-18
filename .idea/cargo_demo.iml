@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/linkerd2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sonic-client/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
       <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
@@ -35,6 +36,7 @@
       <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/api/target" />
       <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/k8s/index/target" />
       <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/core/target" />
+      <excludeFolder url="file://$MODULE_DIR$/sonic-client/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
