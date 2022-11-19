@@ -33,6 +33,6 @@
 
  **/
 
-pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {
+pub fn erase_overlap_intervals(_intervals: Vec<Vec<i32>>) -> i32 {
     0
 }
