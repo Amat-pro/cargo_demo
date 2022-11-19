@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/core/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sonic-client/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/fst-demo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rocksdb-demo/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
       <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
@@ -39,6 +40,7 @@
       <excludeFolder url="file://$MODULE_DIR$/linkerd2/policy-controller/core/target" />
       <excludeFolder url="file://$MODULE_DIR$/sonic-client/target" />
       <excludeFolder url="file://$MODULE_DIR$/fst-demo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rocksdb-demo/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
