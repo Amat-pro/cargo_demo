@@ -1,73 +1,85 @@
 /// leetcode 002
 ///
 /// [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)
-
-pub struct ListNode {
+///
+pub struct Node {
     val: i32,
-    next: Option<Box<ListNode>>,
+    next: Option<Box<Node>>,
 }
 
-impl ListNode {
-    fn new(val: i32) -> Self {
-        ListNode {
-            val,
-            next: None,
-        }
+impl Node {
+    pub fn new(val: i32) -> Self {
+        return Node { val, next: None };
     }
 }
 
-// v1: 递归
-pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    carried(l1, l2, 0)
+// 递归
+pub fn add_two_numbers(n1: Option<Box<Node>>, n2: Option<Box<Node>>) -> Option<Box<Node>> {
+    compute_current_node(n1, n2, 0)
 }
 
-
-pub fn carried(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>, mut carry: i32) -> Option<Box<ListNode>> {
-    if l1.is_none() && l2.is_none() && carry == 0 {
+fn compute_current_node(n1: Option<Box<Node>>, n2: Option<Box<Node>>, carry: i32) -> Option<Box<Node>> {
+    if n1.is_none() && n2.is_none() && carry == 0 {
         return None;
     }
 
-    return Some(Box::new(ListNode {
-        next: carried(
-            l1.and_then(|x| {
-                carry += x.val;
-                x.next
-            }),
-            l2.and_then(|x| {
-                carry += x.val;
-                x.next
-            }),
-            carry / 10,
-        ),
-        val: carry % 10,
-    }));
+    let mut carry_next = 0;
+    let n1_next = n1.and_then(|x| {
+        carry_next = carry + x.val;
+        x.next
+    });
+
+    let n2_next = n2.and_then(|x| {
+        carry_next = carry + x.val;
+        x.next
+    });
+
+
+    let node = Node {
+        val: carry / 10,
+        next: compute_current_node(n1_next, n2_next, carry_next),
+    };
+
+    Some(Box::new(node))
 }
 
-// v2: 循环
-pub fn add_two_numbers_v2(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut result = None;
-    let mut tail = &mut result;
-    let mut t = (l1, l2, 0, 0); // (list1, list2, sum, carry)
+
+// loop
+pub fn add_two_numbers_v2(n1: Option<Box<Node>>, n2: Option<Box<Node>>) -> Option<Box<Node>> {
+    let mut result: Option<Box<Node>> = None;
+    // (pre_node_val, n1_next, n2_next, carry_next)
+    let mut t: (i32, Option<Box<Node>>, Option<Box<Node>>, i32) = (0, n1, n2, 0);
+
+    // tail永远指向最后一个节点，当计算完一个节点之后，tail会指向一个None
+    let mut tail: &mut Option<Box<Node>> = &mut result;
+
     loop {
         t = match t {
-            (None, None, _, 0) => break,
-            (None, None, _, carry) => (None, None, carry, 0),
-            (Some(list), None, _, carry) | (None, Some(list), _, carry) if list.val + carry >= 10 => {
-                (list.next, None, list.val + carry - 10, 1)
+            (_, Some(l1), Some(l2), carry) => {
+                let sum = l1.val + l2.val + carry;
+                (sum % 10, l1.next, l2.next, sum / 10)
             }
-            (Some(list), None, _, carry) | (None, Some(list), _, carry) => {
-                (list.next, None, list.val + carry, 0)
+            (_, Some(l1), None, carry) => {
+                let sum = l1.val + carry;
+                (sum % 10, l1.next, None, sum / 10)
             }
-            (Some(l1), Some(l2), _, carry) if l1.val + l2.val + carry >= 10 => {
-                (l1.next, l2.next, l1.val + l2.val + carry - 10, 1)
+            (_, None, Some(l2), carry) => {
+                let sum = l2.val + carry;
+                (sum % 10, None, l2.next, sum / 10)
             }
-            (Some(l1), Some(l2), _, carry) => {
-                (l1.next, l2.next, l1.val + l2.val + carry, 0)
+            (_, None, None, 0) => {
+                break;
+            }
+            (_, None, None, carry) => {
+                (carry, None, None, 0)
             }
         };
 
-        *tail = Some(Box::new(ListNode::new(t.2)));
+
+        // tail永远指向最后一个节点，当计算完一个节点之后，tail会指向一个None
+        *tail = Some(Box::new(Node::new(t.0)));
         tail = &mut tail.as_mut().unwrap().next;
     }
+
     result
 }
