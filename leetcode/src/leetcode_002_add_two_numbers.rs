@@ -1,3 +1,6 @@
+use std::fmt;
+use std::fmt::Formatter;
+
 /// leetcode 002
 ///
 /// [2. 两数相加](https://leetcode.cn/problems/add-two-numbers/)
@@ -11,7 +14,63 @@ impl Node {
     pub fn new(val: i32) -> Self {
         return Node { val, next: None };
     }
+
+    pub fn add(&mut self, val: i32) {
+        if self.next.is_none() {
+            self.next = Some(Box::new(Self::new(val)));
+            return;
+        }
+
+        self.next.as_mut().unwrap().add(val);
+        return;
+    }
 }
+
+pub struct LinkedList {
+    head: Option<Box<Node>>,
+    len: i32,
+}
+
+impl LinkedList {
+    pub fn new() -> Self {
+        LinkedList {
+            head: None,
+            len: 0,
+        }
+    }
+
+    pub fn add(&mut self, val: i32) {
+        if self.head.is_none() {
+            self.head = Some(Box::new(Node::new(val)));
+        } else {
+            self.head.as_mut().unwrap().add(val);
+        }
+
+        self.len += 1;
+    }
+}
+
+impl fmt::Display for LinkedList {
+    fn fmt(&self, _f: &mut Formatter<'_>) -> fmt::Result {
+        print!("len: {}  detail: ", self.len);
+        fmt_node(&self.head, "".to_string());
+        Ok(())
+    }
+}
+
+fn fmt_node(n: &Option<Box<Node>>, prefix: String) {
+    if n.is_none() {
+        println!();
+        return;
+    }
+
+    let node = n.as_ref().unwrap();
+    print!("{} {} ", prefix, node.val);
+
+
+    fmt_node(&node.next, "->".to_string());
+}
+
 
 // 递归
 pub fn add_two_numbers(n1: Option<Box<Node>>, n2: Option<Box<Node>>) -> Option<Box<Node>> {
@@ -82,4 +141,20 @@ pub fn add_two_numbers_v2(n1: Option<Box<Node>>, n2: Option<Box<Node>>) -> Optio
     }
 
     result
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let mut linked_list = LinkedList::new();
+        linked_list.add(1);
+        linked_list.add(4);
+        linked_list.add(6);
+        linked_list.add(7);
+        linked_list.add(2);
+        println!("{}", linked_list);
+    }
 }
