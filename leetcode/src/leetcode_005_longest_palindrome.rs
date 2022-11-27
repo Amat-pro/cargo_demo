@@ -3,6 +3,9 @@
 /// [5.最长回文字串](https://leetcode.cn/problems/longest-palindromic-substring/)
 ///
 ///
+/// - 暴力破解
+/// - 动态规划
+/// - 中心扩散
 
 // 使用动态规划解题
 pub fn longest_palindromic_substring(s: String) -> String {
