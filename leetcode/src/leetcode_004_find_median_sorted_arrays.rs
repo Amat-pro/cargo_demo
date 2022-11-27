@@ -1,8 +1,8 @@
 use std::cmp::{max, min};
 
-/// leetcode 003
+/// leetcode 004
 ///
-/// [3.寻找两个正序数组的中位数](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
+/// [4.寻找两个正序数组的中位数](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
 ///
 ///
 // 二分查找
