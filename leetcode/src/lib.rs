@@ -1,3 +1,5 @@
+extern crate core;
+
 pub use leetcode_001_two_sum::two_sum;
 pub use leetcode_002_add_two_numbers::add_two_numbers;
 pub use leetcode_002_add_two_numbers::add_two_numbers_v2;
@@ -7,6 +9,7 @@ pub use leetcode_004_find_median_sorted_arrays::find_median_sorted_arrays_v2;
 pub use leetcode_005_longest_palindrome::longest_palindromic_substring;
 pub use leetcode_010_regular_expression_matching::is_match;
 pub use leetcode_011_container_with_most_water::max_area;
+pub use leetcode_015_three_sum::three_sum;
 
 mod leetcode_001_two_sum;
 mod leetcode_002_add_two_numbers;
@@ -15,5 +18,6 @@ mod leetcode_004_find_median_sorted_arrays;
 mod leetcode_005_longest_palindrome;
 mod leetcode_010_regular_expression_matching;
 mod leetcode_011_container_with_most_water;
+mod leetcode_015_three_sum;
 
 
