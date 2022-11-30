@@ -1,6 +1,6 @@
 /// leetcode 015
 ///
-/// [15.三数之和](// https://leetcode.cn/problems/3sum/)
+/// [15.三数之和](https://leetcode.cn/problems/3sum/)
 ///
 pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut result = vec![];
