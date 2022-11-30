@@ -1,8 +1,23 @@
-use macro_demo_trait::declarative_macro;
-use macro_demo::sql2;
-use macro_demo_trait::MyDeriveMacroTrait;
+use std::collections::HashMap;
+
+use lazy_static::lazy_static;
+
 use macro_demo::MyDeriveMacroTrait;
 use macro_demo::route;
+use macro_demo::sql2;
+use macro_demo_trait::declarative_macro;
+use macro_demo_trait::MyDeriveMacroTrait;
+
+lazy_static! {
+    static ref HASHMAP: HashMap<u32, &'static str> = {
+        let mut m = HashMap::new();
+        m.insert(0, "foo");
+        m.insert(1, "bar");
+        m.insert(2, "baz");
+        m
+    };
+}
+
 
 fn main() {
     // First: declarative macro
@@ -26,7 +41,10 @@ fn main() {
     DeriveMacroTestStruct::hello_derive_macro();
 
     // 2.3. Attribute-like macro
-    index()
+    index();
+
+    // a lazy_static demo
+    lazy_static_do();
 }
 
 // 1. Function-like macro
@@ -48,3 +66,9 @@ sql2! {
 pub fn index() {
     println!("hello, i am a attribute-like macro")
 }
+
+
+fn lazy_static_do() {
+    println!("The entry for `0` is \"{}\".", HASHMAP.get(&0).unwrap());
+}
+
