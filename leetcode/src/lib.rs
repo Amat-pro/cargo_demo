@@ -11,6 +11,7 @@ pub use leetcode_010_regular_expression_matching::is_match;
 pub use leetcode_011_container_with_most_water::max_area;
 pub use leetcode_015_three_sum::three_sum;
 pub use leetcode_017_combinations_of_a_phone_number::letter_combinations;
+pub use leetcode_019_remove_nth_node_from_end_of_list::remove_nth_from_end;
 
 mod leetcode_001_two_sum;
 mod leetcode_002_add_two_numbers;
@@ -21,5 +22,6 @@ mod leetcode_010_regular_expression_matching;
 mod leetcode_011_container_with_most_water;
 mod leetcode_015_three_sum;
 mod leetcode_017_combinations_of_a_phone_number;
+mod leetcode_019_remove_nth_node_from_end_of_list;
 
 
