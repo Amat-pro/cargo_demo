@@ -1,10 +1,12 @@
+mod practice;
+
 use std::collections::HashMap;
 
 use lazy_static::lazy_static;
 
-use macro_demo::MyDeriveMacroTrait;
 use macro_demo::route;
 use macro_demo::sql2;
+use macro_demo::MyDeriveMacroTrait;
 use macro_demo_trait::declarative_macro;
 use macro_demo_trait::MyDeriveMacroTrait;
 
@@ -17,7 +19,6 @@ lazy_static! {
         m
     };
 }
-
 
 fn main() {
     // First: declarative macro
@@ -48,13 +49,15 @@ fn main() {
 }
 
 // 1. Function-like macro
-sql2!(trait Example {
-    const CONST_NO_DEFAULT: i32;
-    const CONST_WITH_DEFAULT: i32 = 99;
-    type TypeNoDefault;
-    fn method_without_default(&self);
-    fn method_with_default(&self) {}
-});
+sql2!(
+    trait Example {
+        const CONST_NO_DEFAULT: i32;
+        const CONST_WITH_DEFAULT: i32 = 99;
+        type TypeNoDefault;
+        fn method_without_default(&self);
+        fn method_with_default(&self) {}
+    }
+);
 sql2! {
     fn test() {
         println!("hello, i am test")
@@ -67,8 +70,6 @@ pub fn index() {
     println!("hello, i am a attribute-like macro")
 }
 
-
 fn lazy_static_do() {
     println!("The entry for `0` is \"{}\".", HASHMAP.get(&0).unwrap());
 }
-

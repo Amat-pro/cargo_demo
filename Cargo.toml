@@ -9,3 +9,4 @@ edition = "2021"
 macro_demo = { path = "./macro_demo" }
 macro_demo_trait = { path = "./macro_demo_trait" }
 lazy_static = "1.4.0"
+futures = "0.3.25"
