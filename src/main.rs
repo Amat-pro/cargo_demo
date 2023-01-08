@@ -46,6 +46,14 @@ fn main() {
 
     // a lazy_static demo
     lazy_static_do();
+
+    // thread panic: the thread will exist
+    // refer to https://bean-li.github.io/Error-Handle-in-Rust/
+    std::thread::spawn(|| {
+        panic!("=====>>> thread panic");
+    });
+    std::thread::sleep(std::time::Duration::from_secs(10));
+    println!("===========>> Done");
 }
 
 // 1. Function-like macro
