@@ -17,3 +17,7 @@ Cargo.lock
 # /.idea/modules.xml
 # /.idea/vcs.xml
 # /.idea/git_toolbox_prj.xml
+
+.lh
+
+.DS_Store
