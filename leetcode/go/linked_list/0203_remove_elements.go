@@ -16,6 +16,16 @@ func (l *ListNode) print() {
 	fmt.Println()
 }
 
+func (l *ListNode) len() int {
+	len := 0
+	for l != nil {
+		len++
+		l = l.Next
+	}
+
+	return len
+}
+
 func newListNode(val int) *ListNode {
 	return &ListNode{
 		Val:  val,

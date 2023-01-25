@@ -1,6 +1,7 @@
 package linked_list
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -19,7 +20,10 @@ func Test_removeElements(t *testing.T) {
 	n5.Next = n6
 	n6.Next = n7
 	// 2 3 4 5
-	removeElements(heade1, 6).print()
+	l := removeElements(heade1, 6)
+	l.print()
+	fmt.Println(l.len())
+	l.print()
 
 	// ""
 	var heade2 *ListNode
