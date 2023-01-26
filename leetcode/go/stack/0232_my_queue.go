@@ -6,7 +6,7 @@ type MyQueue struct {
 	stackOut []int //输出栈
 }
 
-func Constructor() MyQueue {
+func QueueConstructor() MyQueue {
 	return MyQueue{
 		stackIn:  make([]int, 0),
 		stackOut: make([]int, 0),
