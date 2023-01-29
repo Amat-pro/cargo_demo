@@ -1,4 +1,4 @@
-package remove_duplicates
+package array
 
 import (
 	"fmt"

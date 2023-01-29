@@ -1,6 +1,4 @@
-package remove_duplicates
-
-import "fmt"
+package array
 
 // / leetcode 026
 // /
@@ -29,7 +27,6 @@ func removeDuplicates(nums []int) int {
 		}
 	}
 
-	fmt.Println("===>> ", nums)
 	return i
 
 }
