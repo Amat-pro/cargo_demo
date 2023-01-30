@@ -1,5 +1,7 @@
 package tree
 
+// 递归实现
+
 func preOrderTraversal(root *TreeNode) []int {
 	result := []int{}
 
