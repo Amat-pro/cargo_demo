@@ -1,6 +1,8 @@
 package bags
 
 func findTargetSumWays(nums []int, target int) int {
+	// 0背包
+	
 	sum := 0
 	for _, v := range nums {
 		sum += v

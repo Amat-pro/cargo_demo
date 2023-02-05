@@ -1,7 +1,7 @@
 package bags
 
 func findMaxForm(strs []string, m, n int) int {
-
+    // 01背包
 	// 背包容量 m个0 n个1
 	// dp[i][j]: i个0,j个1的背包最多装dp[i][j]个物品
 	// dp[i][j] = max(dp[i][j], d[i-x][j-y]+1)
