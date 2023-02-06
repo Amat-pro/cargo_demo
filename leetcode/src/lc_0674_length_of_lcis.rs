@@ -2,7 +2,7 @@
 fn length_of_lcis(nums: Vec<i32>) -> i32 {
     let mut result = 0;
 
-    // 定义dp  nums[1]初始化为1
+    // 定义dp  nums[i]初始化为1
     let mut dp = vec![1; nums.len()];
 
     // 遍历
