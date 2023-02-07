@@ -31,3 +31,4 @@ mod leetcode_021_merge_two_sorted_lists;
 mod lc_0300_length_of_lis;
 mod lc_0674_length_of_lcis;
 mod lc_0718_find_length;
+mod lc_1143_longest_common_subsequence;
