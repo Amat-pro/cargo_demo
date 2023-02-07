@@ -1,4 +1,4 @@
-package consitenthashcode
+package consistent_hash_code
 
 import (
 	"fmt"
