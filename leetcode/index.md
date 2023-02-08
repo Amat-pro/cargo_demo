@@ -64,7 +64,7 @@
 * [0106-从中序与后序遍历序列构造二叉树](go/tree/0106_build_tree.go)
 * [0654-最大二叉树](go/tree/0654_construct_maximum_binary_tree.go)
 * [0617-合并二叉树](go/tree/0617_merge_trees.go)
-* [700-二叉搜索树中的搜索](go/tree/0700_search_BST.go)
+* [0700-二叉搜索树中的搜索](go/tree/0700_search_BST.go)
 * [0098-验证二叉搜索树](go/tree/0098_is_valid_BST.go)
 * [0530-二叉搜索树的最小绝对差](go/tree/0530_get_min_difference.go)
 * [0501-二叉搜索树中的众数](go/tree/0501_find_mode.go)
