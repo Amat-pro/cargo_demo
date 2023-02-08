@@ -5,10 +5,10 @@ fn min_distance(word1: String, word2: String) -> i32 {
     let n = word2.len();
 
     let w1 = word1.as_bytes();
-    let w2 = word2as_bytes();
+    let w2 = word2.as_bytes();
 
     // 定义dp
-    let mut dp = vec![vec![0; w2 + 1]; w1 + 1];
+    let mut dp = vec![vec![0; n + 1]; m + 1];
 
     // 初始化dp
     for i in 0..=m {
@@ -20,7 +20,7 @@ fn min_distance(word1: String, word2: String) -> i32 {
 
     // 遍历
     for i in 1..=m {
-        for j in 1..=m {
+        for j in 1..=n {
             // 递推公式
             if w1[i - 1] == w2[j - 1] {
                 dp[i][j] = dp[i - 1][j - 1];
@@ -32,7 +32,7 @@ fn min_distance(word1: String, word2: String) -> i32 {
         }
     }
 
-    dp[m][n]
+    dp[m][n] as i32
 }
 
 #[cfg(test)]
@@ -41,7 +41,7 @@ mod tests {
 
     #[test]
     fn test_min_distance() {
-        assert_eq!(min_distance("sea".to_String(), "eat".to_string()), 2);
-        assert_eq!(min_distance("leetcode".to_String(), "etco".to_string()), 4);
+        assert_eq!(min_distance("sea".to_string(), "eat".to_string()), 2);
+        assert_eq!(min_distance("leetcode".to_string(), "etco".to_string()), 4);
     }
 }

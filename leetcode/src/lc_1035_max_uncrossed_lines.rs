@@ -3,7 +3,7 @@
 // 等价于求两个数组最长公共子序列长度
 fn max_uncrossed_lines(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
     // 定义dp 并 初始化
-    let mut dp = vec![vec![0; nums2.len()]; nums1.len()];
+    let mut dp = vec![vec![0; nums2.len() + 1]; nums1.len() + 1];
 
     // 遍历
     for i in 1..=nums1.len() {
