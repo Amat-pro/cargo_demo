@@ -23,3 +23,6 @@ language of rust
 * tokio-demo
 * pprof-rs-demo
 * thread-local-demo
+
+## 刷题索引
+* [Index](./leetcode/index.md)
