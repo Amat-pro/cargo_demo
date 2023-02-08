@@ -34,3 +34,4 @@ mod lc_0718_find_length;
 mod lc_1143_longest_common_subsequence;
 mod lc_1035_max_uncrossed_lines;
 mod lc_0053_max_sub_array;
+mod lc_0392_is_subsequence;
