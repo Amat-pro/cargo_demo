@@ -131,6 +131,9 @@
 * [0496-下一个更大元素I](go/stack/0496_next_greater_element.go)
 * [0503-下一个更大元素II(循环数组)](go/stack/0503_next_greater_element_ii.go)
 
+## others 
+* [0200-岛屿数量](go/leetcode_0200_num_is_lands/0200_num_is_lands.go)
+
 
 ## 限流器
 * [固定窗口限流器](./../algorithm/go/limiter/fixed_window_limiter.go)
