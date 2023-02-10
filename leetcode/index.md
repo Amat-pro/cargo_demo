@@ -2,7 +2,7 @@
 
 ## 数组
 * [0704-二分查找](go/array/0704_search.go)
-* [0027-移除元素](go/array/027_remove_element.go)
+* [0027-移除元素](go/array/0027_remove_element.go)
 * [0977-有序数组的平方](go/array/0977_sorted_squares.go)
 * [0209-长度最小的子数组](go/array/0209_min_sub_array_len.go)
 * [0059-螺旋矩阵II](go/array/0059_generate_matrix.go)
