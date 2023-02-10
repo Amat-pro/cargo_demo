@@ -8,7 +8,7 @@
 * [0059-螺旋矩阵II](go/array/0059_generate_matrix.go)
 
 ## 链表
-* [0203-移除链表元素](go/linkered_list/0203_remove_elements.go)
+* [0203-移除链表元素](go/linked_list/0203_remove_elements.go)
 * [0707-设计链表](go/linked_list/0707_my_linked_list.go)
 * [0206-反转链表](go/linked_list/0206_reverse_list.go)
 * [0024-两两交换链表中的节点](go/linked_list/0024_swap_pairs.go)
