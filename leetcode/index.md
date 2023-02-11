@@ -133,7 +133,7 @@
 
 ## others 
 * [0200-岛屿数量](go/leetcode_0200_num_is_lands/0200_num_is_lands.go)
-
+* [0146-LRU缓存](go/leetcode_0146_lru/lru.go)
 
 ## 限流器
 * [固定窗口限流器](./../algorithm/go/limiter/fixed_window_limiter.go)
