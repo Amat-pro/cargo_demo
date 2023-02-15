@@ -125,6 +125,7 @@
 * [0583-两个字符串的删除操作](src/lc_0583_min_distance.rs)
 * [0647-回文子串](src/lc_0647_count_sub_strings.rs)
 * [0516-最长回文子序列](src/lc_0516_longest_palindrome_subsequence.rs)
+* [0072-编辑距离](go/dp/0072_min_distance.go)
 
 ## 单调栈
 * [0739-每日温度](go/stack/0739_daily_temperatures.go)
