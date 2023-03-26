@@ -21,3 +21,5 @@ Cargo.lock
 .lh
 
 .DS_Store
+
+.idea

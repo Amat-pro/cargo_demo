@@ -39,3 +39,4 @@ mod lc_0392_is_subsequence;
 mod lc_0583_min_distance;
 mod lc_0647_count_sub_strings;
 mod lc_0516_longest_palindrome_subsequence;
+mod lc_0649_predict_party_victory;
