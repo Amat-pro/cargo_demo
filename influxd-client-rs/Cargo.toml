@@ -1,0 +1,17 @@
+[package]
+name = "influxd-client-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+base64 = "0.13.0"
+bytes = "1.2.1"
+http-body = "0.4.5"
+tower = { version = "0.4", features = ["full"] }
+hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1", features = ["full"] }
+serde = "1.0.144"
+serde_derive = "1.0.144"
+serde_json = "1.0.85"

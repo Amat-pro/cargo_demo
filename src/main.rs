@@ -1,8 +1,24 @@
-use macro_demo_trait::declarative_macro;
-use macro_demo::sql2;
-use macro_demo_trait::MyDeriveMacroTrait;
-use macro_demo::MyDeriveMacroTrait;
+mod practice;
+
+use std::collections::HashMap;
+
+use lazy_static::lazy_static;
+
 use macro_demo::route;
+use macro_demo::sql2;
+use macro_demo::MyDeriveMacroTrait;
+use macro_demo_trait::declarative_macro;
+use macro_demo_trait::MyDeriveMacroTrait;
+
+lazy_static! {
+    static ref HASHMAP: HashMap<u32, &'static str> = {
+        let mut m = HashMap::new();
+        m.insert(0, "foo");
+        m.insert(1, "bar");
+        m.insert(2, "baz");
+        m
+    };
+}
 
 fn main() {
     // First: declarative macro
@@ -26,17 +42,30 @@ fn main() {
     DeriveMacroTestStruct::hello_derive_macro();
 
     // 2.3. Attribute-like macro
-    index()
+    index();
+
+    // a lazy_static demo
+    lazy_static_do();
+
+    // thread panic: the thread will exist
+    // refer to https://bean-li.github.io/Error-Handle-in-Rust/
+    std::thread::spawn(|| {
+        panic!("=====>>> thread panic");
+    });
+    std::thread::sleep(std::time::Duration::from_secs(10));
+    println!("===========>> Done");
 }
 
 // 1. Function-like macro
-sql2!(trait Example {
-    const CONST_NO_DEFAULT: i32;
-    const CONST_WITH_DEFAULT: i32 = 99;
-    type TypeNoDefault;
-    fn method_without_default(&self);
-    fn method_with_default(&self) {}
-});
+sql2!(
+    trait Example {
+        const CONST_NO_DEFAULT: i32;
+        const CONST_WITH_DEFAULT: i32 = 99;
+        type TypeNoDefault;
+        fn method_without_default(&self);
+        fn method_with_default(&self) {}
+    }
+);
 sql2! {
     fn test() {
         println!("hello, i am test")
@@ -47,4 +76,8 @@ sql2! {
 #[route(GET, "/")]
 pub fn index() {
     println!("hello, i am a attribute-like macro")
+}
+
+fn lazy_static_do() {
+    println!("The entry for `0` is \"{}\".", HASHMAP.get(&0).unwrap());
 }
