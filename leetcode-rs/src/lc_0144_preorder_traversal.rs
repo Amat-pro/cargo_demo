@@ -14,9 +14,9 @@ pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 
 fn recursion(result: &mut Vec<i32>, node: Option<Rc<RefCell<TreeNode>>>) {
-    // 1. 递归函数
-    // 2. 递归条件
-    // 3. 终止条件
+    // 1. 终止条件
+    // 2. 单层处理逻辑
+    // 3. 收集结果集
 
     match node {
         Some(n) => {
@@ -31,4 +31,32 @@ fn recursion(result: &mut Vec<i32>, node: Option<Rc<RefCell<TreeNode>>>) {
             return;
         }
     }
+}
+
+pub fn preorder_traversal_v2(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    // 1. 终止条件
+    // 2. 单层处理逻辑
+    // 3. 收集结果集
+    let mut result: Vec<i32> = vec![];
+    return match root {
+        Some(node) => {
+            // 中
+            result.push(node.borrow().val.clone());
+            // 左
+            let mut left_result = preorder_traversal_v2(node.borrow().left.clone());
+            if !left_result.is_empty() {
+                result.append(&mut left_result);
+            }
+            // 右
+            let mut right_result = preorder_traversal_v2(node.borrow().right.clone());
+            if !right_result.is_empty() {
+                result.append(&mut right_result);
+            }
+            result
+        }
+        None => {
+            // 终止条件
+            result
+        }
+    };
 }

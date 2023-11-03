@@ -27,7 +27,10 @@ mod tests {
                                           Some(Rc::new(RefCell::new(left))),
                                           Some(Rc::new(RefCell::new(right))));
 
-        let result = lc_0144_preorder_traversal::preorder_traversal(Some(Rc::new(RefCell::new(root))));
+        let result = lc_0144_preorder_traversal::preorder_traversal(Some(Rc::new(RefCell::new(root.clone()))));
         println!("fn: preorder_traversal, result: {:?}", result);
+
+        let result_v2 = lc_0144_preorder_traversal::preorder_traversal_v2(Some(Rc::new(RefCell::new(root))));
+        println!("fn: preorder_traversal_v2, result: {:?}", result_v2);
     }
 }
