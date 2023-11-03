@@ -39,10 +39,10 @@ mod tests {
     #[test]
     fn reverse_list() {
         // 创建链表 1 -> 2 -> 3 -> 4 -> 5
-        let mut node_5 = lc_0206_reverse_list::ListNode { val: 5, next: None };
-        let mut node_4 = lc_0206_reverse_list::ListNode { val: 4, next: Some(Box::new(node_5)) };
-        let mut node_3 = lc_0206_reverse_list::ListNode { val: 3, next: Some(Box::new(node_4)) };
-        let mut node_2 = lc_0206_reverse_list::ListNode { val: 2, next: Some(Box::new(node_3)) };
+        let node_5 = lc_0206_reverse_list::ListNode { val: 5, next: None };
+        let node_4 = lc_0206_reverse_list::ListNode { val: 4, next: Some(Box::new(node_5)) };
+        let node_3 = lc_0206_reverse_list::ListNode { val: 3, next: Some(Box::new(node_4)) };
+        let node_2 = lc_0206_reverse_list::ListNode { val: 2, next: Some(Box::new(node_3)) };
         let node_1 = lc_0206_reverse_list::ListNode { val: 1, next: Some(Box::new(node_2)) };
         // 反转链表
         let revered_head = lc_0206_reverse_list::reverse_list(Some(Box::new(node_1)));
