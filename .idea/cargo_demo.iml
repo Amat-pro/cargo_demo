@@ -24,6 +24,7 @@
       <sourceFolder url="file://$MODULE_DIR$/fst-demo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rocksdb-demo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/leetcode/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode-rs/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/algorithm/target" />
       <excludeFolder url="file://$MODULE_DIR$/libp2p_demo/target" />
