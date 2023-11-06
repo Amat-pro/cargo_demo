@@ -4,6 +4,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+/// 0206 reverse_list 反转链表
 pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 
     // 设置一个虚拟头节点 ()

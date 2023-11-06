@@ -2,6 +2,7 @@ mod tree_node;
 mod sort;
 
 mod lc_0001_two_sum;
+mod lc_0011_max_area;
 mod lc_0144_preorder_traversal;
 mod lc_0206_reverse_list;
 
@@ -14,6 +15,7 @@ mod tests {
     use crate::lc_0144_preorder_traversal;
     use crate::lc_0206_reverse_list;
     use crate::sort::quick_sort::quick_sort;
+    use crate::lc_0011_max_area::max_area;
 
     #[test]
     fn two_sum() {
@@ -61,5 +63,12 @@ mod tests {
         let mut arr: [i32; 10] = [10, 8, 4, 3, 1, 9, 2, 7, 5, 6];
         quick_sort(&mut arr);
         println!("fn: quick sort, result: {:?}", arr);
+    }
+
+    #[test]
+    fn test_max_area() {
+        let height = vec![1, 8, 6, 2, 5, 4, 8, 3, 7];
+        let result = max_area(height);
+        println!("fn: max area, result: {}", result);
     }
 }
