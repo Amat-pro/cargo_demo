@@ -1,4 +1,5 @@
 mod tree_node;
+mod sort;
 
 mod lc_0001_two_sum;
 mod lc_0144_preorder_traversal;
@@ -12,6 +13,7 @@ mod tests {
     use crate::tree_node::TreeNode;
     use crate::lc_0144_preorder_traversal;
     use crate::lc_0206_reverse_list;
+    use crate::sort::quick_sort::quick_sort;
 
     #[test]
     fn two_sum() {
@@ -52,5 +54,12 @@ mod tests {
             println!("{}", node.val);
             current_node = &node.next;
         }
+    }
+
+    #[test]
+    fn test_quick_sort() {
+        let mut arr: [i32; 10] = [10, 8, 4, 3, 1, 9, 2, 7, 5, 6];
+        quick_sort(&mut arr);
+        println!("fn: quick sort, result: {:?}", arr);
     }
 }
