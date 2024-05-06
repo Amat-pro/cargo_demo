@@ -1,5 +1,6 @@
 mod tree_node;
 mod sort;
+mod graph;
 
 mod lc_0001_two_sum;
 mod lc_0011_max_area;
