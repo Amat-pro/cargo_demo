@@ -1,1 +1,3 @@
 mod lc_0797_all_paths_source_target;
+mod lc_0200_num_islands_dfs;
+mod lc_0200_num_islands_bfs;

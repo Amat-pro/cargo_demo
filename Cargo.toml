@@ -10,7 +10,9 @@ members = [
     "fst-demo",
     "rocksdb-demo",
     "leetcode-rs",
-    "meilisearch"
+    "meilisearch",
+    "tracing",
+    "thread-local-demo"
 ]
 
 [dependencies]
